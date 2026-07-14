@@ -1,33 +1,38 @@
 import documentModel from "../models/document.model.js";
+import { uploadFile } from "../services/storage.service.js";
 
 export const uploadPDF = async (req, res) => {
+
     try {
-        // if no file received 
         if (!req.file) {
             return res.status(400).json({
                 success: false,
-                message: "No PDF uploaded",
+                message: "Please upload a PDF.",
             });
         }
 
-        // Save document record
+        const uploadedFile = await uploadFile({
+            buffer: req.file.buffer,
+            fileName: `${Date.now()}-${req.file.originalname}`,
+        });
+
         const document = await documentModel.create({
-            filename: req.file.filename,
+            filename: uploadedFile.fileName,
+            fileId: uploadedFile.fileId,
+            fileUrl: uploadedFile.fileUrl,
             status: "uploaded",
         });
 
         return res.status(201).json({
             success: true,
-            message: "PDF uploaded successfully",
+            message: "PDF uploaded successfully.",
             document,
         });
-
     } catch (error) {
         console.error(error);
-
         return res.status(500).json({
             success: false,
-            message: "Upload failed",
+            message: error.message || "Something went wrong.",
         });
     }
 };
