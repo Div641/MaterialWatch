@@ -3,6 +3,8 @@ import { processPDF } from "../services/pdf.service.js";
 import DocumentContent from "../models/documentContent.model.js";
 import Chunk from "../models/chunk.model.js";
 import { chunkText } from "../services/chunk.service.js";
+import { generateEmbedding } from "../services/embedding.service.js";
+import { processInBatches } from "../utils/batchProcessor.js";
 
 
 export const processDocument = async (req, res) => {
@@ -56,13 +58,51 @@ export const processDocument = async (req, res) => {
         //3-> chunk text
         const chunks = await chunkText(extractedText);
 
+        await DocumentContent.findOneAndUpdate(
+            { document: document._id },
+            {
+                chunkStatus: "processing",
+                embeddingStatus: "processing",
+            }
+        );
+
         //4-> prepare chunk document
-        const chunkDocuments = chunks.map((chunk) => ({
-            documentId: document._id,
-            chunkIndex: chunk.chunkIndex,
-            text: chunk.text,
-            metadata: chunk.metadata
-        }));
+        // const chunkDocuments = await Promise.all (
+        //         chunks.map(async (chunk) => {
+
+        //         const embedding = await generateEmbedding(chunk.text);
+                
+        //         return{ 
+        //         documentId: document._id,
+        //         chunkIndex: chunk.chunkIndex,
+        //         text: chunk.text,
+        //         metadata: chunk.metadata,
+        //         embedding:embedding,
+        //         }
+        //     })
+        // );
+
+        //reason of not using promise.all
+        //it waas causing issue for large pdf upload
+        //This prevents hitting Gemini API rate limits on large PDFs while still being much faster than processing chunks one by one.
+        const chunkDocuments = await processInBatches(
+            chunks,
+            5,
+            async (chunk) => {
+                const embedding = await generateEmbedding(chunk.text);
+
+                return {
+                    documentId: document._id,
+                    chunkIndex: chunk.chunkIndex,
+                    text: chunk.text,
+                    metadata: chunk.metadata,
+                    embedding,
+                };
+            }
+        );
+
+
+
 
         //5->save chunks
         await Chunk.deleteMany({ documentId: document._id });//to verify that same chunk isn't saved repetetively
@@ -75,7 +115,8 @@ export const processDocument = async (req, res) => {
         await DocumentContent.findOneAndUpdate(
             { document: document._id },
             {
-                chunkStatus: "completed"
+                chunkStatus: "completed",
+                embeddingStatus: "completed",
             }
         );
 
@@ -85,16 +126,23 @@ export const processDocument = async (req, res) => {
             success:true,
             message:"PDF processed successfully"
         });
-    }catch (error) {
-        if (document) {
-            document.status = "failed";
-            await document.save();
-        }
+        }catch (error) {
+            if (document) {
+                document.status = "failed";
+                await document.save();
+            }
 
-        console.log(error);
-        return res.status(500).json({
-            success:false,
-            message:error.message
+            await DocumentContent.findOneAndUpdate(
+                { document: document._id },
+                {
+                    embeddingStatus: "failed",
+                }
+            );
+
+            console.log(error);
+            return res.status(500).json({
+                success:false,
+                message:error.message
         });
 
     }

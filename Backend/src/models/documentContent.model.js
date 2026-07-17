@@ -8,12 +8,10 @@ const documentContentSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
-
         text: {
             type: String,
             default: ""
         },
-
         extractionStatus: {
             type: String,
             enum: [
@@ -24,7 +22,6 @@ const documentContentSchema = new mongoose.Schema(
             ],
             default: "pending"
         },
-
         chunkStatus: {
             type: String,
             enum: [
@@ -35,7 +32,6 @@ const documentContentSchema = new mongoose.Schema(
             ],
             default: "pending"
         },
-
         embeddingStatus: {
             type: String,
             enum: [
@@ -46,18 +42,15 @@ const documentContentSchema = new mongoose.Schema(
             ],
             default: "pending"
         },
-
         metadata: {
             pageCount: {
                 type: Number,
                 default: 0
             },
-
             wordCount: {
                 type: Number,
                 default: 0
             },
-
             characterCount: {
                 type: Number,
                 default: 0

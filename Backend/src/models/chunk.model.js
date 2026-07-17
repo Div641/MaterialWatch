@@ -21,6 +21,10 @@ const chunkSchema = new mongoose.Schema(
             startChar: Number,
             endChar: Number,
         },
+        embedding: {
+            type: [Number],
+            default: []
+        },
     },
     {
         timestamps: true,
