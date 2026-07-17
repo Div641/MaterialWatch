@@ -1,9 +1,10 @@
+//providing upload/delete files service
 import imagekit from "../config/imagekit.js";
 
 export const uploadFile = async ({
     buffer,
     fileName,
-    folder = "/FinSightAI",
+    folder = "/MaterialWatch",
 }) => {
 
     try {

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const documentSchema = new mongoose.Schema(
     {
-        filename: {
+    filename: {
         type: String,
         required: true
     },
@@ -14,11 +14,27 @@ const documentSchema = new mongoose.Schema(
         type: String,
         required: true
     },
+    uploadedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    mimeType: {
+        type: String,
+        default: "application/pdf",
+    },
+    fileSize: {
+        type: Number,
+        default: 0,
+    },
     status: {
         type: String,
         enum: [
             "uploaded",
-            "processing",
+            "extracting",
+            "extracted",
+            "chunking",
+            "chunked",
+            "embedding",
             "completed",
             "failed"
         ],
@@ -27,7 +43,7 @@ const documentSchema = new mongoose.Schema(
     uploadedAt: {
         type: Date,
         default: Date.now
-    }
+    },
     },
     { timestamps: true }
 );
