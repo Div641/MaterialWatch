@@ -19,7 +19,7 @@ export const uploadPDF = async (req, res) => {
         const document = await documentModel.create({
             filename: uploadedFile.fileName,
             fileId: uploadedFile.fileId,
-            fileUrl: uploadedFile.fileUrl,
+            url: uploadedFile.fileUrl,
             status: "uploaded",
         });
 

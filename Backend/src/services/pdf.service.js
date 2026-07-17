@@ -1,5 +1,5 @@
 import axios from "axios";
-import pdf from "pdf-parse";
+import {PDFParse} from "pdf-parse";
 
 //1st downloading the pdf from imagekit cloud url
 const downloadPDF = async (url) => {
@@ -12,7 +12,9 @@ const downloadPDF = async (url) => {
 
 //then extracting text from the downloaded pdf using pdf-parse
 const extractText = async (buffer) => {
-    const data = await pdf(buffer);
+    const parser = new PDFParse({ data: buffer });  // Instantiate the PDFParse class, passing the buffer to the 'data' option
+    const data = await parser.getText();  // Call the getText method to extract the text content
+    await parser.destroy();
     return data.text;
 };
 

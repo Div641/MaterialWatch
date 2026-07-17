@@ -1,5 +1,6 @@
 import Document from "../models/document.model.js";
 import { processPDF } from "../services/pdf.service.js";
+import DocumentContent from "../models/documentContent.model.js";
 
 export const processDocument = async (req, res) => {
     try {
@@ -13,7 +14,7 @@ export const processDocument = async (req, res) => {
         document.status = "extracting";
         await document.save();
 
-        const extractedText = await processPDF(document.fileUrl); //calling pdf.service to get the processed text from pdf
+        const extractedText = await processPDF(document.url); //calling pdf.service to get the processed text from pdf
         //everything in RAG will be done using the text
         await DocumentContent.create({
             document: document._id,
