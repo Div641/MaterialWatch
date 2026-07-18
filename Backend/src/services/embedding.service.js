@@ -16,7 +16,7 @@ export const generateEmbedding = async (text) => {
         if (!embedding) {
             throw new Error("No embedding returned from Gemini.");
         }
-
+        // console.log("Embedding dimension:", embedding.length);
         return embedding;
 
     } catch (error) {
