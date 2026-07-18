@@ -58,6 +58,10 @@ export const processDocument = async (req, res) => {
         //3-> chunk text
         const chunks = await chunkText(extractedText);
 
+        if (!chunks.length) {
+            throw new Error("No chunks generated.");
+        }
+
         await DocumentContent.findOneAndUpdate(
             { document: document._id },
             {
@@ -102,11 +106,18 @@ export const processDocument = async (req, res) => {
         );
 
 
-
-
         //5->save chunks
         await Chunk.deleteMany({ documentId: document._id });//to verify that same chunk isn't saved repetetively
-        await Chunk.insertMany(chunkDocuments);
+        await Chunk.insertMany(chunkDocuments , {ordered: false});
+
+        //verify insertion
+        const inserted = await Chunk.countDocuments({
+            documentId: document._id
+        });
+
+        if (!inserted) {
+            throw new Error("Chunks were not stored.");
+}
 
         //6->update status to chunked
         document.status = "chunked";
@@ -128,17 +139,16 @@ export const processDocument = async (req, res) => {
         });
         }catch (error) {
             if (document) {
-                document.status = "failed";
-                await document.save();
-            }
-
-            await DocumentContent.findOneAndUpdate(
+                await DocumentContent.findOneAndUpdate(
                 { document: document._id },
                 {
                     embeddingStatus: "failed",
                 }
             );
 
+            }
+
+            
             console.log(error);
             return res.status(500).json({
                 success:false,

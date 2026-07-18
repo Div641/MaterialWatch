@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Chunk from "../models/chunk.model"
+import Chunk from "../models/chunk.model.js"
 
 
 export const searchSimilarChunks = async (
