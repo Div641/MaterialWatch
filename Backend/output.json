@@ -1,0 +1,34 @@
+{
+  "extractions": [
+    {
+      "source_filename": "1784442013191-doc_001_CPlZr80w-.pdf",
+      "company_name": "Ramsons Projects Limited",
+      "stock_ticker": "RAMSONS",
+      "disclosure_date": "2022-09-29",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    }
+  ],
+  "summary": {
+    "total_documents_processed": 1,
+    "documents_by_category": {
+      "dividend_declaration": 0,
+      "credit_rating_action": 0,
+      "financial_results": 0,
+      "board_composition_change": 1,
+      "other": 0
+    },
+    "documents_that_failed_processing": []
+  }
+}
