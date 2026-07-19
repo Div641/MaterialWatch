@@ -12,14 +12,6 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Global Error Handler
-app.use((err, req, res, next) => {
-    console.error(err);
-    res.status(err.status || 500).json({
-        success: false,
-        message: err.message || "An unexpected error occurred."
-    });
-});
 
 // Health check
 app.get("/", (req, res) => {
@@ -32,5 +24,23 @@ app.use("/api/process", processRouter);
 app.use("/api/extraction",extractionRoutes);
 
 
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Route not found"
+    });
+});
+
+// Global Error Handler (LAST)
+app.use((err, req, res, next) => {
+
+    console.error(err);
+
+    res.status(err.status || 500).json({
+        success: false,
+        message: err.message || "Internal Server Error"
+    });
+
+});
 
 export default app;

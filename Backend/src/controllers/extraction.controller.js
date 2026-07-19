@@ -1,6 +1,7 @@
 import { retrieveRelevantChunks } from "../services/rag.service.js";
 import { extractStructuredData } from "../services/extraction.service.js";
 import Document from "../models/document.model.js";
+import Extraction from "../models/extraction.model.js";
 
 
 export const runExtraction = async (req, res) => {
@@ -53,7 +54,21 @@ export const runExtraction = async (req, res) => {
 
         try {
             parsedExtraction = JSON.parse(cleaned);
+            await Extraction.findOneAndUpdate(
+                {
+                    document: documentId
+                },
+                {
+                    extraction: parsedExtraction
+                },
+                {
+                    upsert: true,
+                    new: true
+                }
+            );
         } catch {
+            console.error("Invalid Gemini JSON:", cleaned);
+            
             return res.status(500).json({
                 success: false,
                 message: "Gemini returned invalid JSON."
@@ -63,7 +78,7 @@ export const runExtraction = async (req, res) => {
 
         return res.json({
             success:true,
-            extraction:JSON.parse(cleaned)
+            extraction:parsedExtraction
         });
 
     } catch (err) {
