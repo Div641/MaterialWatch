@@ -4,6 +4,7 @@ import morgan from "morgan"
 import uploadRouter from "./routes/upload.routes.js";
 import processRouter from "./routes/process.routes.js";
 import extractionRoutes from "./routes/extraction.routes.js";
+import exportRoutes from "./routes/export.routes.js";
 
 
 const app = express();
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 app.use("/api/upload",uploadRouter)
 app.use("/api/process", processRouter);
 app.use("/api/extraction",extractionRoutes);
+app.use("/api/export",exportRoutes)
 
 
 app.use((req, res) => {
