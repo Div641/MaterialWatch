@@ -2,6 +2,7 @@ import Chunk from "../models/chunk.model.js";
 import { generateEmbedding } from "./embedding.service.js";
 import { cosineSimilarity } from "../utils/cosineSimilarity.js";
 
+//to retrieve relevant chunks from top vector search chunks
 export const retrieveRelevantChunks = async ({
     documentId,
     query,
@@ -10,7 +11,7 @@ export const retrieveRelevantChunks = async ({
 
     const queryEmbedding = await generateEmbedding(query); //for user query
 
-    const chunks = await Chunk.find({ //loading all related chunks
+    const chunks = await Chunk.find({ //loading all related chunks only
         documentId
     }).lean();
 
@@ -18,7 +19,7 @@ export const retrieveRelevantChunks = async ({
         return [];
     }
 
-    //calculate similarity score usin cosine
+    //calculate similarity score using cosine
     const scoredChunks = chunks
         .filter(chunk => Array.isArray(chunk.embedding) && chunk.embedding.length)
         .map(chunk => ({

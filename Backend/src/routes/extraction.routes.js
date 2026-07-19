@@ -1,8 +1,9 @@
 import express from "express";
-import { testRetriever } from "../controllers/extraction.controller.js";
+import { runExtraction } from "../controllers/extraction.controller.js";
 
 const router = express.Router();
 
-router.post("/retrieve",testRetriever);
+
+router.post("/run",runExtraction)
 
 export default router;
