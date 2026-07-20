@@ -4,29 +4,39 @@ import { uploadFile } from "../services/storage.service.js";
 export const uploadPDF = async (req, res) => {
 
     try {
-        if (!req.file) {
+
+        const files = req.files;
+
+        if (!files || files.length === 0) {
             return res.status(400).json({
                 success: false,
-                message: "Please upload a PDF.",
+                message: "No PDF files uploaded."
             });
         }
 
-        const uploadedFile = await uploadFile({
-            buffer: req.file.buffer,
-            fileName: `${Date.now()}-${req.file.originalname}`,
+        // Upload all files to ImageKit concurrently
+        const uploadPromises = req.files.map(async (file) => {
+            const uploadedFile = await uploadFile({
+                buffer: file.buffer,
+                fileName: `${Date.now()}-${file.originalname}`,
+            });
+            return {
+                filename: uploadedFile.fileName,
+                fileId: uploadedFile.fileId,
+                url: uploadedFile.fileUrl,
+                status: "uploaded",
+            };
         });
+        const filesData = await Promise.all(uploadPromises);
+        // Save all records in MongoDB under Document collection
+        const documents = await documentModel.insertMany(filesData);
 
-        const document = await documentModel.create({
-            filename: uploadedFile.fileName,
-            fileId: uploadedFile.fileId,
-            url: uploadedFile.fileUrl,
-            status: "uploaded",
-        });
 
         return res.status(201).json({
             success: true,
-            message: "PDF uploaded successfully.",
-            document,
+            message: `${uploadedDocuments.length} PDFs uploaded successfully.`,
+            totalUploaded: uploadedDocuments.length,
+            documents: uploadedDocuments
         });
     } catch (error) {
         console.error(error);

@@ -1,12 +1,15 @@
 //used to embed text using gemini embedding model
 import ai from "../config/config.js";
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const generateEmbedding = async (text) => {
     if (!text || typeof text !== "string") {
         throw new Error("Invalid text provided for embedding.");
     }
 
-    try {
+    for (let attempt = 1; attempt <= retries; attempt++){
+        try {
         const response = await ai.models.embedContent({
             model: "gemini-embedding-001",
             contents: text,
@@ -25,7 +28,20 @@ export const generateEmbedding = async (text) => {
         return embedding;
 
     } catch (error) {
-        console.error("Embedding generation failed:", error.message);
-        throw error;
+         const isRateLimit =
+                error.status === 429 ||
+                error.message?.includes("429") ||
+                error.message?.includes("Quota");
+            if (isRateLimit && attempt < retries) {
+                console.warn(
+                    `[Embedding Rate Limit] Hit quota limit. Retrying attempt ${attempt}/${retries} in ${delay}ms...`
+                );
+                await sleep(delay);
+                delay *= 2; // Exponential backoff (2s -> 4s -> 8s -> 16s)
+            } else {
+                console.error("Embedding generation failed:", error.message);
+                throw error;
+            }
+        }
     }
 };

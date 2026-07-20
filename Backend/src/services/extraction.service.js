@@ -16,27 +16,23 @@ Rules:
 - If a value is unavailable, return null.
 - Use only information present in the context.
 
-Allowed values:
-
-event_category:
-- dividend_declaration
-- credit_rating_action
-- financial_results
-- board_composition_change
-- other
-
-extraction_confidence:
-- high
-- medium
-- low
-
+Notes on Schema & Normalization Rules:
+1. The 'figures' object is a single flat structure. Only fill in fields relevant to the event category for that disclosure. Leave all irrelevant fields as null.
+2. Monetary Normalization:
+   - Fields ending in '_inr_crore' (revenue_inr_crore, profit_after_tax_inr_crore) MUST be normalized to plain numbers in INR Crore (e.g., "Rs 1,250 crore" -> 1250, "Rs 50 Lakh" -> 0.5, "Rs 50000000" -> 5).
+   - Fields not ending in crore (dividend_per_share_inr) MUST be normalized to plain numeric INR (e.g., "Rs 5.50 per share" -> 5.5).
+3. financial_period MUST be a short human-readable label such as "Q4 FY2026", "H1 FY2026", or "FY2025-26".
+4. board_change_count MUST be the total number of appointments + resignations + removals combined in the disclosure (total changes, NOT net size change).
+Allowed Enum Values:
+- event_category: dividend_declaration | credit_rating_action | financial_results | board_composition_change | other
+- dividend_type: interim | final | special | null
+- extraction_confidence: high | medium | low
 Return JSON in EXACTLY the following schema:
-
 {
   "extractions": [
     {
       "source_filename": "${filename}",
-      "company_name": "",
+      "company_name": "string",
       "stock_ticker": null,
       "disclosure_date": null,
       "event_category": "other",

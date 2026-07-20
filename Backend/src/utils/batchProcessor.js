@@ -1,7 +1,8 @@
 export const processInBatches = async (
     items,
     batchSize,
-    asyncProcessor
+    asyncProcessor,
+    delayMs=1500
 ) => {
     const results = [];
 
@@ -13,6 +14,11 @@ export const processInBatches = async (
         );
 
         results.push(...batchResults);
+
+        // Throttle delay between batches to respect API rate limits
+        if (i + batchSize < items.length && delayMs > 0) {
+            await new Promise((resolve) => setTimeout(resolve, delayMs));
+        }
     }
 
     return results;

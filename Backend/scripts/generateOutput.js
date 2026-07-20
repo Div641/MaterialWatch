@@ -28,39 +28,26 @@ const failedDocuments = [];
 const output = [];
 
 for (const item of extractions) {
-
     const record = item.extraction?.extractions?.[0];
-
     if (!record) continue;
-
     output.push(record);
-
     if (documentsByCategory[record.event_category] !== undefined) {
-
         documentsByCategory[record.event_category]++;
-
     }
-
 }
 
 const allDocuments = await Document.find();
 
 const processedIds = new Set(
-
-    extractions.map(
-        (doc) => doc.document._id.toString()
-    )
-
+    extractions
+        .filter((doc) => doc.document)
+        .map((doc) => doc.document._id.toString())
 );
 
 for (const doc of allDocuments) {
-
     if (!processedIds.has(doc._id.toString())) {
-
         failedDocuments.push(doc.filename);
-
     }
-
 }
 
 const finalOutput = {
