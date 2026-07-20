@@ -4,7 +4,7 @@
       "source_filename": "1784442013191-doc_001_CPlZr80w-.pdf",
       "company_name": "Ramsons Projects Limited",
       "stock_ticker": "RAMSONS",
-      "disclosure_date": "2022-09-29",
+      "disclosure_date": "September 29, 2022",
       "event_category": "board_composition_change",
       "figures": {
         "dividend_per_share_inr": null,
@@ -18,17 +18,544 @@
         "board_change_count": 1
       },
       "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784470374652-doc_002_AxLNK015l.pdf",
+      "company_name": "Solar Industries India Limited",
+      "stock_ticker": "SOLARINDS",
+      "disclosure_date": "2026-03-31",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784470711724-doc_003_kSRDkQJvs.pdf",
+      "company_name": "Solar Industries India Limited",
+      "stock_ticker": "532725",
+      "disclosure_date": "2025-09-17",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784470766399-doc_004_DlpG_x4gs.pdf",
+      "company_name": "Pennar Industries Limited",
+      "stock_ticker": "PENIND",
+      "disclosure_date": "2024-02-09",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784470848671-doc_005_OeMdIyUfc.pdf",
+      "company_name": "XTGlobal Infotech Limited",
+      "stock_ticker": "531225",
+      "disclosure_date": "2022-09-23",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784470913655-doc_006_ea0tZcY8BX.pdf",
+      "company_name": "Prima Plastics Limited",
+      "stock_ticker": "530589",
+      "disclosure_date": "2023-05-29",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784471020122-doc_007_5FnKRfQ0F.pdf",
+      "company_name": "BGIL Films & Technologies Ltd.",
+      "stock_ticker": null,
+      "disclosure_date": null,
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784471082285-doc_008_0COYpNfB2.pdf",
+      "company_name": "Vadilal Enterprises Limited",
+      "stock_ticker": null,
+      "disclosure_date": "2023-08-09",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 2
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784471154951-doc_009_U2u7zPYz_.pdf",
+      "company_name": "Goa Carbon Limited",
+      "stock_ticker": "GOACARBON",
+      "disclosure_date": "2025-12-16",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "1784471219798-doc_010_GCwLI60oI.pdf",
+      "company_name": "DMCC Speciality Chemicals Limited",
+      "stock_ticker": "DMCC",
+      "disclosure_date": "2025-10-18",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 1
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_026_EfTmlhO44.pdf",
+      "company_name": "PPAP Automotive Limited",
+      "stock_ticker": "PPAP",
+      "disclosure_date": "2025-09-25",
+      "event_category": "dividend_declaration",
+      "figures": {
+        "dividend_per_share_inr": 1.5,
+        "dividend_type": "final",
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "FY2024-25",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_027_ndC6qIrE1.pdf",
+      "company_name": "JSW Cement Limited",
+      "stock_ticker": "JSWCEMENT",
+      "disclosure_date": "2026-01-28",
+      "event_category": "other",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_028_g-3V38ZLM.pdf",
+      "company_name": "Genus Prime Infra Limited",
+      "stock_ticker": "532425",
+      "disclosure_date": "2024-03-30",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 3
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_029_h--saoHuv.pdf",
+      "company_name": null,
+      "stock_ticker": null,
+      "disclosure_date": null,
+      "event_category": "other",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": null
+      },
+      "extraction_confidence": "low"
+    },
+    {
+      "source_filename": "doc_030_WryAeFAAe.pdf",
+      "company_name": "MSTC Limited",
+      "stock_ticker": "MSTCLTD",
+      "disclosure_date": "2025-08-30",
+      "event_category": "board_composition_change",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": 3
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_031_7WC2faShR.pdf",
+      "company_name": "MPS Infotec",
+      "stock_ticker": null,
+      "disclosure_date": "2023-08-11",
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "Q1 FY2023-24",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_032_xCOrwceIb.pdf",
+      "company_name": "EVEREST INDUSTRIES LIMITED",
+      "stock_ticker": null,
+      "disclosure_date": "2025-10-29",
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": 288.593,
+        "profit_after_tax_inr_crore": -8.4032,
+        "financial_period": "Q2 FY2026",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_033_XJHTlqq7f.pdf",
+      "company_name": "Genus Prime Infra Limited",
+      "stock_ticker": null,
+      "disclosure_date": "2026-02-14",
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": null
+      },
+      "extraction_confidence": "medium"
+    },
+    {
+      "source_filename": "doc_034_xNy-ZQOrt.pdf",
+      "company_name": "ALKAU METALS LTD.",
+      "stock_ticker": null,
+      "disclosure_date": null,
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": 24.9112,
+        "profit_after_tax_inr_crore": -1.3926,
+        "financial_period": "Q3 FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_035_zuUgT-fSk.pdf",
+      "company_name": "WARDWIZARD FOODS AND BEVERAGES LIMITED",
+      "stock_ticker": null,
+      "disclosure_date": "2025-08-12",
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": 13.1979,
+        "profit_after_tax_inr_crore": -1.6766,
+        "financial_period": "Q1 FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_036_aEFYXzAGl.pdf",
+      "company_name": null,
+      "stock_ticker": null,
+      "disclosure_date": null,
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": 14695.55,
+        "profit_after_tax_inr_crore": 1245.92,
+        "financial_period": "Q4 FY2025",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_037_2acVWv7ji.pdf",
+      "company_name": "Tulsyan NEC Limited",
+      "stock_ticker": "513629",
+      "disclosure_date": "2026-02-13",
+      "event_category": "financial_results",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "Q3 FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_038_KyDNDdvpx.pdf",
+      "company_name": "Bajaj Holdings & Investment Limited",
+      "stock_ticker": "BAJAJHLDNG",
+      "disclosure_date": "2025-09-16",
+      "event_category": "dividend_declaration",
+      "figures": {
+        "dividend_per_share_inr": 65,
+        "dividend_type": "interim",
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_039_OxNuDN9Ag.pdf",
+      "company_name": null,
+      "stock_ticker": "FCL",
+      "disclosure_date": "2025-09-27",
+      "event_category": "dividend_declaration",
+      "figures": {
+        "dividend_per_share_inr": 0.8,
+        "dividend_type": "interim",
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_040_n8CIceOdV.pdf",
+      "company_name": "Balmer Lawrie & Co. Ltd.",
+      "stock_ticker": "BALMLAWRIE",
+      "disclosure_date": "2026-03-05",
+      "event_category": "dividend_declaration",
+      "figures": {
+        "dividend_per_share_inr": 4.25,
+        "dividend_type": "interim",
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_041_-IS0TKLz6.pdf",
+      "company_name": "SHREEJI SHIPPING GLOBAL LIMITED",
+      "stock_ticker": "SHREEJISPG",
+      "disclosure_date": "February 24, 2026",
+      "event_category": "dividend_declaration",
+      "figures": {
+        "dividend_per_share_inr": 1,
+        "dividend_type": "interim",
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": "FY2025-26",
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
+    },
+    {
+      "source_filename": "doc_042_GHGNAlr6D.pdf",
+      "company_name": "Pearl Polymers Limited",
+      "stock_ticker": "PEARLPOLY",
+      "disclosure_date": "2024-09-28",
+      "event_category": "other",
+      "figures": {
+        "dividend_per_share_inr": null,
+        "dividend_type": null,
+        "credit_rating_before": null,
+        "credit_rating_after": null,
+        "credit_rating_agency": null,
+        "revenue_inr_crore": null,
+        "profit_after_tax_inr_crore": null,
+        "financial_period": null,
+        "board_change_count": null
+      },
+      "extraction_confidence": "high"
     }
   ],
   "summary": {
-    "total_documents_processed": 1,
+    "total_documents_processed": 27,
     "documents_by_category": {
-      "dividend_declaration": 0,
+      "dividend_declaration": 5,
       "credit_rating_action": 0,
-      "financial_results": 0,
-      "board_composition_change": 1,
-      "other": 0
+      "financial_results": 7,
+      "board_composition_change": 12,
+      "other": 3
     },
-    "documents_that_failed_processing": []
+    "documents_that_failed_processing": [
+      "doc_001_2MpGRLrL_.pdf",
+      "doc_002_7PQp9iuwM.pdf",
+      "doc_003_16topVpEF.pdf",
+      "doc_004_JYya4eJzd.pdf",
+      "doc_005_zqEgdvI2v.pdf",
+      "doc_006_d1LG8jNDK.pdf",
+      "doc_007_DOSjlEtkJ.pdf",
+      "doc_008_9QIjxOQ6j.pdf",
+      "doc_009_2oRPyiftY.pdf",
+      "doc_010_ou3QvD7ZR.pdf",
+      "doc_011_1vyH_rlQk.pdf",
+      "doc_012_-y_bk3cZs.pdf",
+      "doc_013_hLvW70did.pdf",
+      "doc_014_UdXkYtXFm.pdf",
+      "doc_015_r1Fo6xElt.pdf",
+      "doc_016_z9-_DQIZt.pdf",
+      "doc_017_ucd31ytU6.pdf",
+      "doc_018_B-NLJtzDO.pdf",
+      "doc_019_ibojyevU-.pdf",
+      "doc_020_G9R8KDgcN.pdf",
+      "doc_021_vkl9rCqpP.pdf",
+      "doc_022_9O66cE_SIh.pdf",
+      "doc_023_03Cv2ummI.pdf",
+      "doc_024_Qy--4Higi.pdf",
+      "doc_025_HkGtFTr5f.pdf",
+      "doc_043_9CUDrgK-g.pdf",
+      "doc_044_dQXyCAG2T.pdf",
+      "doc_045_78jZIkmcq.pdf",
+      "doc_047_hvkjF3QLH.pdf",
+      "doc_048_0R20GemjY.pdf",
+      "doc_049_6zwj_H_LK.pdf",
+      "doc_050_-bXkkTdJI.pdf"
+    ]
   }
 }

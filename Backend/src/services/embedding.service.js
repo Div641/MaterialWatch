@@ -8,6 +8,9 @@ export const generateEmbedding = async (text) => {
         throw new Error("Invalid text provided for embedding.");
     }
 
+    const retries = 5;
+    let delay = 2000;
+
     for (let attempt = 1; attempt <= retries; attempt++){
         try {
         const response = await ai.models.embedContent({
