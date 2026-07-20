@@ -1,6 +1,5 @@
 # MaterialWatch
 
-# MaterialWatch
 
 MaterialWatch is an AI-powered document intelligence system that automates the extraction of structured information from corporate disclosure PDFs. Built using a Retrieval-Augmented Generation (RAG) pipeline, it processes uploaded documents through text extraction, semantic chunking, embedding generation, context retrieval, and Gemini-powered information extraction to classify disclosure events and generate standardized JSON outputs. Designed with a modular and scalable architecture, MaterialWatch enables efficient processing of financial documents while ensuring maintainability and extensibility for future enhancements.
 
