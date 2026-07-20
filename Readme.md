@@ -105,6 +105,19 @@ npm run generate-output
 
 This produces the final `output.json` containing structured extractions and summary statistics for all processed documents.
 
+## API Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/api/upload` | Upload one or more PDF disclosure documents to ImageKit and create document metadata in MongoDB. |
+| `POST` | `/api/process/:documentId` | Process an uploaded document by extracting text, creating semantic chunks, generating embeddings, and indexing them for retrieval. |
+| `POST` | `/api/extraction/run` | Run the RAG extraction pipeline for a single document and store the structured extraction result. |
+| `POST` | `/api/extraction/run-all` | Execute the AI extraction pipeline for all processed documents stored in the database. |
+| `GET` | `/api/extraction/:documentId` | Retrieve the structured extraction result for a specific document. |
+| `GET` | `/api/documents` | Retrieve metadata and processing status of all uploaded documents. |
+| `GET` | `/api/documents/:documentId` | Retrieve metadata for a specific document. |
+| `GET` | `/api/health` | Health check endpoint to verify that the backend service is running. |
+
 ## Architectural Approach
 
 MaterialWatch is built around a **two-stage Retrieval-Augmented Generation (RAG) architecture** that separates document preprocessing from AI-based information extraction. This design minimizes redundant computation, improves scalability, and keeps each component independently maintainable.
