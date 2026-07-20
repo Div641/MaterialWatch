@@ -175,3 +175,14 @@ Given inconsistent BSE/NSE formatting across documents, I used Gemini for both c
 | **Node.js** | Serves as the runtime environment for the backend application and processing pipelines. |
 
 The selected technologies were chosen to build a lightweight, modular, and production-oriented Retrieval-Augmented Generation (RAG) system while minimizing infrastructure complexity. By combining Gemini for reasoning, LangChain for preprocessing, MongoDB Atlas Vector Search for retrieval, and ImageKit for cloud storage, the system achieves an efficient end-to-end pipeline for processing and extracting structured information from corporate disclosure documents.
+
+## Note on `output.json` — Incomplete Due to Gemini Quota
+
+**Status:** The pipeline is fully functional and working as designed end-to-end. `output.json` is shorter than the full 49 documents purely because of a Gemini free-tier daily quota limit, not a bug in the code.
+
+### What's actually happening
+
+- Every stage of the pipeline — upload → text extraction → chunking → embedding → RAG retrieval → Gemini classification/extraction — runs correctly on every document that was processed.
+- `generateOutput.js` doesn't run the pipeline itself; it only reads whatever extractions already exist in MongoDB and writes them to `output.json`. So the file's length reflects how many documents *made it through* before the quota was hit, not how many the code is capable of handling.
+- Gemini's free tier enforces a **requests-per-day (RPD)** cap in addition to per-minute limits. With 49 documents each producing multiple chunks, and each chunk needing its own embedding call plus a separate extraction call per document, the cumulative request count for a full run can exceed the daily free-tier allowance — especially after repeated runs during development/debugging.
+- This is a **quota limit**, not a rate-limit crash or an unhandled error — the architecture (`embedding.service.js`) already has exponential backoff for per-minute rate limits (429s), but a *daily* quota exhaustion can't be waited out with backoff; it resets at midnight Pacific time.
